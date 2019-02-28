@@ -1,4 +1,20 @@
 # vue-shader-effect
+PIXI.jsのShader連携するコンポーネント
+
+
+## 追加モジュール
+``` bash
+npm i sass-loader node-sass --save-dev
+npm i glslify --save-dev
+npm i glslify-import-loader --save-dev
+npm i glslify-loader --save-dev
+npm i glsl-strip-comments --save-dev
+```
+
+
+
+
+
 
 > A Vue.js project
 
@@ -26,12 +42,6 @@ npm run e2e
 # run all tests
 npm test
 
-# add npm
-npm i sass-loader node-sass --save-dev
-npm i glslify --save-dev
-npm i glslify-import-loader --save-dev
-npm i glslify-loader --save-dev
-npm i glsl-strip-comments --save-dev
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

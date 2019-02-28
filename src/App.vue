@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
+    <!-- <img src="./assets/logo.png"> -->
+		<ul class="links">
+			<!-- <li><a href="/#/distortion">Distortion</a></li> -->
+			<!-- <li><a href="/#/line">Line</a></li> -->
+			<li><router-link to="distortion">Distortion</router-link></li>
+			<li><router-link to="line">Line</router-link></li>
+		</ul>
   </div>
 </template>
 
@@ -11,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,ins,kbd,q,samp,small,strong,
 sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
 figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;box-sizing: border-box;}
@@ -39,5 +45,15 @@ input,select,textarea{margin:0;padding:0;vertical-align:baseline;}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.links{
+	padding-left: 30px;
+
+	li{
+		padding: 3px 0;
+		list-style-type: disc;
+		text-align: left;
+	}
 }
 </style>

@@ -19,7 +19,8 @@ export default class Effect extends Filter {
 			uniforms
 		);
 
-		// https://pixijs.download/v4.7.2/docs/core_renderers_webgl_filters_Filter.js.html#line71
+		// NOTE: uv座標がずれるため、余計な余白を取る。
+		// https://pixijs.download/v4.7.2/docs/PIXI.Filter.html#padding
 		this.padding = 0;
 	}
 }

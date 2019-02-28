@@ -18,13 +18,12 @@
 ==========================================================================*/
 <script>
 import { TweenLite } from "gsap/TweenMax";
-
 import Main from "../assets/js/sampleEffect/Main";
 import * as _utils from "../assets/js/utils";
 
 
 export default {
-  name: "ShaderEffect",
+  name: "Template",
 
   /**
    * data -
