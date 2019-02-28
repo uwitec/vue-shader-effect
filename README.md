@@ -3,8 +3,8 @@ PIXI.jsのShader連携するコンポーネント
 
 ## DEMO
 <ul>
-	<li><a href="https://yoshihitofujiwara.github.io/vue-shader-effect/#/distortion">distortion</a></li>
-	<li><a href="https://yoshihitofujiwara.github.io/vue-shader-effect/#/line">line</a></li>
+	<li><a href="https://yoshihitofujiwara.github.io/vue-shader-effect/#/distortion" target="_blank">distortion</a></li>
+	<li><a href="https://yoshihitofujiwara.github.io/vue-shader-effect/#/line" target="_blank">line</a></li>
 </ul>
 
 ## 追加モジュール(package.json追加済み)
