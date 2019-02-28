@@ -1,5 +1,5 @@
 // utils.js
-// version: 0.0.3
+// version: 0.0.4
 // author: yoshihito fujiwara
 
 
@@ -17,16 +17,17 @@ export function lerp(val, min, max) {
 };
 
 
-
-
+/**
+ * getMouseEventAngle - マウスイベントが起こったアングルの取得
+ *
+ * @param {Object} event - マウスイベントデータ
+ */
 export function getMouseEventAngle(event) {
 	let cx = event.srcElement.offsetWidth * 0.5;
 	let cy = event.srcElement.offsetHeight * 0.5;
-	let rad = Math.atan2(cy - event.offsetY, cx - event.offsetX);
-	// console.log(Math.atan2(cy - event.offsetY, cx - event.offsetX ));
+	let rad = Math.atan2(cy - event.offsetY, event.offsetX - cx);
 	return rad;
 }
-
 
 
 /**

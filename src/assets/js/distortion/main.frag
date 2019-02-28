@@ -30,8 +30,8 @@ void main(void) {
 	float x = cos(uAngle);
 	float y = sin(uAngle);
 
-	vec2 distCoord1 = vec2(uv.x + -x * offset1, uv.y + -y * offset1);
-	vec2 distCoord2 = vec2(uv.x + x * offset2, uv.y + y * offset2);
+	vec2 distCoord1 = vec2(uv.x + x * offset1, uv.y + -y * offset1);
+	vec2 distCoord2 = vec2(uv.x + -x * offset2, uv.y + y * offset2);
 
 	// vec2 distCoord1;
 	// vec2 distCoord2;
