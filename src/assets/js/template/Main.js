@@ -10,9 +10,8 @@ export default class Main {
   /**
    * constructor
    */
-	constructor() {
-		utils.skipHello();
-
+	constructor(props) {
+		this.props = props;
 		this.loader = new loaders.Loader();
 		this.debugTool = new DebugTool();
 		this.app = null;
@@ -27,16 +26,16 @@ export default class Main {
 	/**
 	 * setup -
 	 *
-	 * @param {object} params - elm, texture, uniforms, callback
+	 * @param {object} params - {$el, uniforms, callback}
 	 * @memberof Main
 	 */
 	setup(params){
 		this.effect = new Effect(params.uniforms);
 
-		this.loader.add("texture", params.texture);
+		this.loader.add("texture", this.props.texture);
 
 		this.loader.onComplete.add((a, b) => {
-			this._setRenderer(params.elm, params.callback);
+			this._setRenderer(params.$el, params.callback);
 		});
 
 		this.loader.onError.add((a, b) => {
@@ -57,19 +56,21 @@ export default class Main {
 	_setRenderer(elm, callback){
 		callback = callback || function(){};
 
-		let style = getComputedStyle(elm);
+		utils.skipHello();
 
 		this.app = new Application({
-			width: +style.width.replace("px", ""),
-			height: +style.height.replace("px", ""),
+			width: this.props.width,
+			height: this.props.height,
 			transparent: true
 		});
+
 		elm.appendChild(this.app.view);
 
 		this.sprite = new Sprite(PIXI.Texture.fromImage("texture"));
-		this.sprite.scale.set(0.5, 0.5);
 		this.sprite.filters = [this.effect];
 		this.app.stage.addChild(this.sprite);
+		$el.appendChild(this.app.view);
+
 		callback();
 	}
 }

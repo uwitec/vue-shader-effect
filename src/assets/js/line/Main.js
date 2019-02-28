@@ -26,7 +26,7 @@ export default class Main {
 	/**
 	 * setup -
 	 *
-	 * @param {object} params - elm, texture, uniforms, callback
+	 * @param {object} params - {$el, uniforms, callback}
 	 * @memberof Main
 	 */
 	setup(params){

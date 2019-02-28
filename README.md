@@ -1,19 +1,28 @@
 # vue-shader-effect
 PIXI.jsのShader連携するコンポーネント
 
+## DEMO
+<ul>
+	<li><a href="https://yoshihitofujiwara.github.io/vue-shader-effect/#/distortion">distortion</a></li>
+	<li><a href="https://yoshihitofujiwara.github.io/vue-shader-effect/#/line">line</a></li>
+</ul>
 
-## 追加モジュール
+## 追加モジュール(package.json追加済み)
 ``` bash
 npm i sass-loader node-sass --save-dev
+
+// shaderファイルをモジュール管理するためのnpm
 npm i glslify --save-dev
 npm i glslify-import-loader --save-dev
 npm i glslify-loader --save-dev
 npm i glsl-strip-comments --save-dev
 ```
 
-
-
-
+## webpack設定追加
+```
+webpack.base.conf.js
+shaderファイルをモジュール管理するためのnpm処理追加
+```
 
 
 > A Vue.js project

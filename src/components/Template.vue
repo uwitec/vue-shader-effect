@@ -3,11 +3,9 @@
 ==========================================================================*/
 <template>
   <div class="wrap">
-    <!-- ShaderEffect -->
-    <h1>|-|</h1>
+    <h1>vue-shader-effect | Template</h1>
     <div class="shader_effect" ref="shader_effect" @mouseenter="hover" @mouseleave="hover">
       <slot></slot>
-			<!-- <div><a href="">HOGE</a></div> -->
     </div>
   </div>
 </template>
@@ -26,16 +24,16 @@ export default {
   name: "Template",
 
   /**
-   * data -
+   * data
    */
   data() {
     return {
-      // texture: "./assets/img/img02.jpg" Bad Pattern
-      texture: require("../assets/img/img03.jpg"),
       uniforms: {
 				uProgress: { type: "1f", value: 0.0 }
 			},
-			main: new Main()
+			main: new Main({
+	      texture: require("../assets/img/img03.jpg")
+			})
     };
   },
 
@@ -44,30 +42,23 @@ export default {
    * mounted -
    */
   mounted: function() {
-    this.init();
+		this.main.setup({
+			elm: this.$refs.shader_effect,
+			uniforms: this.uniforms,
+			callback: null
+		});
+
+		if (this.main.debugTool) {
+			this.main.debugTool.gui.add(this.uniforms.uProgress, "value", 0.0, 1.0).step(0.001).name("progress");
+      this.main.debugTool.setup(this.$el);
+		}
   },
 
 
   /**
-   * methods -
+   * methods
    */
   methods: {
-    // init -
-    init: function() {
-			this.main.setup({
-				elm: this.$refs.shader_effect,
-				texture: this.texture,
-				uniforms: this.uniforms,
-				callback: null
-			});
-			this.update();
-
-			if (this.main.debugTool) {
-				this.main.debugTool.gui.add(this.uniforms.uProgress, "value", 0.0, 1.0).step(0.001).name("progress");
-			}
-    },
-
-
 		/**
 		 * hover -
 		 */
@@ -95,6 +86,10 @@ export default {
 	watch: {
 		"uniforms.uProgress.value": function(newVal, oldVal) {
 			this.main.effect.uniforms.uProgress = newVal;
+
+			if(this.main.debugTool){
+				this.main.debugTool.gui.updateDisplay();
+			}
 		}
 	}
 };
@@ -117,7 +112,14 @@ export default {
     margin: 0 auto;
     width: 640px;
     height: 360px;
-		background: #e9e9e9;
+    background: #e9e9e9;
+    cursor: pointer;
+
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>
+

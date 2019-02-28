@@ -23,8 +23,9 @@ import * as utils from "../assets/js/utils";
 export default {
   name: "Distortion",
 
+
   /**
-   * data -
+   * data
    */
   data() {
     return {
@@ -47,7 +48,7 @@ export default {
 
 
   /**
-   * mounted -
+   * mounted
    */
   mounted: function() {
 		this.main.setup({
@@ -65,7 +66,7 @@ export default {
 
 
   /**
-   * methods -
+   * methods
    */
   methods: {
 		/**

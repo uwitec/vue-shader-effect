@@ -22,13 +22,12 @@ import * as utils from "../assets/js/utils";
 export default {
   name: "Line",
 
+
   /**
-   * data -
+   * data
    */
   data() {
     return {
-      // texture: "./assets/img/img02.jpg" Bad Pattern
-      // texture: require("../assets/img/img03.jpg"),
       uniforms: {
 				uDirection: { type: "1i", value: 0 },
         uProgress: { type: "1f", value: 0.0 }
@@ -41,8 +40,9 @@ export default {
     };
   },
 
+
   /**
-   * mounted -
+   * mounted
    */
   mounted: function() {
     this.main.setup({
@@ -60,8 +60,9 @@ export default {
     }
   },
 
+
   /**
-   * methods -
+   * methods
    */
   methods: {
     /**

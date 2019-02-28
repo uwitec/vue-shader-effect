@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 import Distortion from '@/components/Distortion'
 import Line from '@/components/Line'
-// import WaterColor from '@/components/WaterColor'
 
 Vue.use(Router)
 
