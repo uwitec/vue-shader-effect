@@ -41,7 +41,7 @@ export default {
 				height: 720,
 				texture1: require("../assets/img/img01.jpg"),
 				texture2: require("../assets/img/img02.jpg"),
-				pattern: require("../assets/img/displacement/4.png")
+				pattern: require("../assets/img/pattern/4.png")
 			})
     };
   },

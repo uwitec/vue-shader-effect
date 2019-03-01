@@ -1,15 +1,11 @@
-// DebugTool.js
-// version: 0.0.1
-// author: yoshihito fujiwara
-
 import * as dat from "dat.gui";
 import Stats from "stats-js";
 
 
 /**
- * @class Debug
+ * @class DebugTool
  */
-export default class Debug {
+export default class DebugTool {
   /**
    * constructor
    */
@@ -25,7 +21,7 @@ export default class Debug {
 	/**
 	 * setup
 	 *
-	 * @memberof Debug
+	 * @memberof DebugTool
 	 */
 	setup($el) {
 		this.stats.domElement.style.position = "absolute";
@@ -45,7 +41,7 @@ export default class Debug {
 	/**
 	 * _update
 	 *
-	 * @memberof Debug
+	 * @memberof DebugTool
 	 */
 	_update() {
 		this.stats.update();
